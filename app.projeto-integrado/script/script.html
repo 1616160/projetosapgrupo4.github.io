@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<body>
+    <div class="inputBox">
+    <img src="../../imagens/ete.png">
+    <div class="nome-data">
+    <p><label max-height="10" style="color:rgb(255, 0, 0) ; margin-left: 40px;">Nome:</label> <input type="text"
+            id="nome" minlength="4" maxlength="10" size="10" max-height="10"></p>
+    <p><label max-height="10" style="color:rgb(255, 0, 0) ; margin-left: 40px;">Data:</label> <input type="date"
+            id="data" minlength="4" maxlength="10" size="10"></p>
+        </div>
+    <p><label max-height="10" style="color:rgb(255, 0, 0) ; margin-left: 40px;">Email:</label> <input type="text"
+            id="email" minlength="4" maxlength="10" size="10"></p>
+    <p><label max-height="10" style="color:rgb(255, 0, 0) ; margin-left: 40px;">Senha:</label> <input type="password"
+            id="senha" minlength="4" maxlength="10" size="10"></p>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <a href="logui.html" style="color:rgb(255, 255, 255) ;margin-left: 164px;">Ja tenho conta</a>
+        <br><br>
+        </div>
+
+    <hr>
+
+    <p id="dadosInseridos"></p>
+
+  
+           <script type="text/javascript">
+        const password = document.getElementById('password');
+        const toggle = document.getElementById('toggle');
+
+        function showHide() {
+            if (password.type === 'password') {
+                password.setAttribute('type', 'text');
+                toggle.classList.add('hide');
+            } else {
+                password.setAttribute('type', 'password');
+                toggle.classList.remove('hide');
+            }
+        }
+        //Crição do array alunos vazio
+        const alunos = []
+
+        //Função para limpar os dados dos inputs
+        function limparDados() {
+            document.getElementById('nome').value = ''
+            document.getElementById('data').value = ''
+            document.getElementById('email').value = ''
+            document.getElementById('senha').value = ''
+        }
+
+        //Função para remover um determinado valor do array
+        function remover(index) {
+            alunos.splice(index, 1)
+
+            return document.getElementById('dadosInseridos').innerHTML = '<h3 class="danger">Aluno Removido com Sucesso!</h3>' + exibir()
+        }
+
+        //Função para exibir todos os dados dos alunos que estão no array
+        function exibir() {
+            html = '<h2>Alunos Cadastrados</h2>'
+
+            html += '<ul>'
+
+            alunos.forEach((aluno, index) => {
+                html += '<li><p>Nome: <strong>' + aluno.nome + '</strong></p>'
+                html += '<p>Data: <strong>' + aluno.data + '</strong></p>'
+                html += '<p>Email: <strong>' + aluno.email + '</strong></p>'
+                html += '<p>Senha: <strong>' + aluno.senha + '</strong></p>'
+                html += '<p><a onclick="remover(' + index + ')">Remover</a></p></li>'
+                html += '<hr>'
+            })
+
+            html += '</ul>'
+
+            limparDados()
+
+            return document.getElementById('dadosInseridos').innerHTML = html
+        }
+
+        //Função para cadastrar um novo aluno e inseri-lo no array
+        function cadastrar() {
+            var nomeAluno = document.getElementById('nome').value
+            var dataAluno = document.getElementById('data').value
+            var emailAluno = document.getElementById('email').value
+            var senhaAluno = document.getElementById('senha').value
+            aluno = { nome: nomeAluno, data: dataAluno, email: emailAluno, senha: senhaAluno }
+
+            alunos.push(aluno)
+
+            exibir()
+
+        }
+    </script>
+    
+</body>
+
+</html>

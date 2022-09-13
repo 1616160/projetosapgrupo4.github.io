@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  margin-left: 40px;
+  color: #000000;
+}
+
+.inputBox {
+  border: 10px;
+  background-image: url(../../imagens/image3.jpg);
+  background-repeat: repeat;
+  width: 438px;
+  height: 800px;
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  margin-top: -70px;
+  margin-left: -180px
+}
+
+img {
+  width: 377px;
+  margin: 34px;
+  justify-content: center;
+}
+
+.inputBox .nome {
+  width: 170px;
+  height: 40px;
+  margin-left:5px;
+ 
+}
+
+.inputBox .data {
+  width: 170px;
+  height: 40px;
+  margin-left:220px;
+  
+}
+
+
+.inputBox input {
+  outline: 0px;
+  max-height: 10%;
+  width: 377px;
+  height: 40px;
+  margin-left: 30px;
+  border-radius: 7px;
+  border-color: black;
+  justify-content: center;
+  box-shadow: 1px 5px 10px 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input:active {
+  background-color: #000000a6;
+  color: #ffffff;
+}
+
+#toggle {
+  margin-top: -21px;
+  margin-left: 360px;
+  position: 100px;
+  top: 50%;
+  right: 34px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 31px;
+  background: url(/imagens/eye-slash.png);
+  background-size: cover;
+  cursor: pointer;
+}
+
+#toggle.hide {
+  background: url(/imagens/icon\ frame.png);
+  background-size: cover;
+  width: 30px;
+  height: 31px;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  font-weight: 00;
+  background-color: black;
+  margin-left: 50px;
+  color: aliceblue;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 5px;
+  width: 343.6px;
+  height: 60.35px;
+  top: 500px;
+}
+
+button:active {
+  background-color: #000000b6;
+  color: #000000;
+}
+
+.Esquceu-a-senha {
+  color: rgb(255, 255, 255);
+  margin-left: 100px;
+  position: absolute;
+  width: 2000px;
+  height: 490px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  text-decoration: none;
+}
+
+h2 {
+  border-radius: 6px;
+  border-color: #000000;
+  color: rgb(0, 0, 0);
+  margin-left: 90px;
+  width: 380px;
+  height: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.crie-sua-conta {
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  margin-left: 150px;
+  position: absolute;
+  width: 190px;
+
+}
+
+;

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tela de Login</title>
+</head>
+
+<body style="background-color: rgb(0, 0, 0);">
+    <div class="inputBox">
+        <!-- imagen da ete -->
+        <img src="../../imagens/ete.png">
+        <!-- caixas de texto -->
+        <label for="email" max-height="10" style="color:rgb(255, 0, 0) ;">E-mail :</label>
+        <input type="text" nome="email" minlength="4" maxlength="25" size="17" placeholder="entre com seu email">
+        <br><br>
+        <label for="senha" style="color:rgb(217, 255, 0) ;">Senha :</label>
+        <input type="password" id="password" minlength="4" maxlength="10" size="10" placeholder="Entre com a Senha">
+        <div id="toggle" onclick="showHide();"></div><br>
+        <button>Entrar</button>
+        <br><br>
+        <!-- link de recupera senha -->
+        <a class="Esquceu-a-senha" href="#" form="Esquceu a senha?">Esquceu a Senha?Clique Aqui</a> <br>
+        <h2>-------------- Ou --------------</h2><br>
+        <!-- link de criar conta senha -->
+        <a class="crie-sua-conta" href="cadrasto.html">Crie sua conta aqui</a>
+
+    </div>
+
+    <script type="text/javascript">
+        const password = document.getElementById('password');
+        const toggle = document.getElementById('toggle');
+
+        function showHide() {
+            if (password.type === 'password') {
+                password.setAttribute('type', 'text');
+                toggle.classList.add('hide');
+            } else {
+                password.setAttribute('type', 'password');
+                toggle.classList.remove('hide');
+            }
+        }
+
+    </script>
+</body>
+
+</html>

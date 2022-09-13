@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+
+<body style="background-color:black ;">
+    <div class="inputBox">
+        <img src="../../imagens/ete.png">
+        <div class="nome-data">
+            <label max-height="10" style="color:rgb(255, 0, 0) ; ">Nome:</label><br> 
+            <input type="text"placeholder="  Seu Nome  " id="nome" class="nome" minlength="4" maxlength="10" size="10" max-height="10">
+
+             <label max-height="10"class="data" style="color:rgb(238, 255, 0) ;">Data:</label><br>
+             <input type="date" id="data" class="data" minlength="4" maxlength="10" size="10">
+            </div>
+            <p><label max-height="10" style="color:rgb(30, 255, 0) ; margin-left: 40px;">Email:</label> <input
+                placeholder="  Seu Nome  "     type="email" id="email" minlength="4" maxlength="25" size="10"></p>
+            <p><label max-height="10" style="color: rgb(168, 180, 0) ; margin-left: 40px;">Senha:</label> <input
+                placeholder="  Digite uma Senha  "     type="password" id="senha" minlength="4" maxlength="10" size="10"></p><br>
+            <button onclick="cadastrar()">Entrar</button>
+            <a href="logui.html" style="color:rgb(255, 255, 255) ;margin-left: 164px;">Ja tenho conta</a>
+            <br><br>
+        </div>
+
+        <hr>
+
+        <p id="dadosInseridos" style="color: rgb(255, 255, 255);"></p>
+
+
+        <script type="text/javascript">
+            const password = document.getElementById('password');
+            const toggle = document.getElementById('toggle');
+
+            function showHide() {
+                if (password.type === 'password') {
+                    password.setAttribute('type', 'text');
+                    toggle.classList.add('hide');
+                } else {
+                    password.setAttribute('type', 'password');
+                    toggle.classList.remove('hide');
+                }
+            }
+        
+            const alunos = []
+
+           
+            function limparDados() {
+                document.getElementById('nome').value = ''
+                document.getElementById('data').value = ''
+                document.getElementById('email').value = ''
+                document.getElementById('senha').value = ''
+            }
+
+          
+            function remover(index) {
+                alunos.splice(index, 1)
+
+                return document.getElementById('dadosInseridos').innerHTML = '<h3 class="danger">Aluno Removido com Sucesso!</h3>' + exibir()
+            }
+
+           
+            function exibir() {
+                html = '<h2 style="color: rgb(255, 255, 255);">Alunos Cadastrados</h2>'
+
+                html += '<ul>'
+
+                alunos.forEach((aluno, index) => {
+                    html += '<li><p>Nome: <strong>' + aluno.nome + '</strong></p>'
+                    html += '<p>Data: <strong>' + aluno.data + '</strong></p>'
+                    html += '<p>Email: <strong>' + aluno.email + '</strong></p>'
+                    html += '<p>Senha: <strong>' + aluno.senha + '</strong></p>'
+                    html += '<p><a onclick="remover(' + index + ')">Remover</a></p></li>'
+                    html += '<hr>'
+                })
+
+                html += '</ul>'
+
+                limparDados()
+
+                return document.getElementById('dadosInseridos').innerHTML = html
+            }
+
+        
+            function cadastrar() {
+                var nomeAluno = document.getElementById('nome').value
+                var dataAluno = document.getElementById('data').value
+                var emailAluno = document.getElementById('email').value
+                var senhaAluno = document.getElementById('senha').value
+                aluno = { nome: nomeAluno, data: dataAluno, email: emailAluno, senha: senhaAluno }
+
+                alunos.push(aluno)
+
+                exibir()
+
+            }
+        </script>
+
+</body>
+
+</html>
